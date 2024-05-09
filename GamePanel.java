@@ -3,6 +3,7 @@ package main;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Toolkit;
 
 import javax.swing.JPanel;
@@ -11,6 +12,7 @@ public class GamePanel extends JPanel implements Runnable{
 	
 	int FPS = 30;
 	Thread gameThread;
+	public Player player1 = new Player(this);
 	
 	Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 	final int screen_Width = dim.width;
@@ -61,10 +63,19 @@ public class GamePanel extends JPanel implements Runnable{
 	
 	public void update() {
 		
+		player1.update();
+		
 	}
 	
 	public void paintComponent(Graphics g) {
 		
+		super.paintComponent(g);
+		
+		Graphics2D g2 = (Graphics2D)g;
+		
+		player1.draw(g2);
+		
+		g2.dispose();
 	}
 
 }
