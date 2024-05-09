@@ -21,19 +21,15 @@ public class KeyHandler implements KeyListener{
 		
 		if (code == KeyEvent.VK_W || code == KeyEvent.VK_UP) {
 			upPressed = true;
-			System.out.println(1);
 		}
 		else if (code == KeyEvent.VK_A || code == KeyEvent.VK_LEFT) {
 			leftPressed = true;
-			System.out.println(2);
 		}
 		else if (code == KeyEvent.VK_S || code == KeyEvent.VK_DOWN) {
 			downPressed = true;
-			System.out.println(3);
 		}
 		else if (code == KeyEvent.VK_D || code == KeyEvent.VK_RIGHT) {
 			rightPressed = true;
-			System.out.println(4);
 		}	
 	}
 	
@@ -59,7 +55,7 @@ public class KeyHandler implements KeyListener{
 		}
 		
 	}
-
+	
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub

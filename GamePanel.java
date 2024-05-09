@@ -10,9 +10,9 @@ import javax.swing.JPanel;
 
 public class GamePanel extends JPanel implements Runnable{
 	
-	int FPS = 30;
+	int FPS = 60;
 	Thread gameThread;
-	KeyHandler keyH = new KeyHandler(this);
+	public KeyHandler keyH = new KeyHandler(this);
 	public Player player1 = new Player(this, keyH);
 	
 	Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
@@ -23,6 +23,9 @@ public class GamePanel extends JPanel implements Runnable{
 		
 		this.setPreferredSize(new Dimension(screen_Width, screen_Height));
 		this.setBackground(Color.BLACK);
+		this.addKeyListener(keyH);
+		this.setFocusable(true);
+		
 		
 	}
 	
@@ -44,7 +47,7 @@ public class GamePanel extends JPanel implements Runnable{
 
 			// redraw sim with updated information
 			repaint();
-				
+			
 			try {
 				double remainingTime = nextDrawTime - System.nanoTime();
 				remainingTime = remainingTime/1000000;
