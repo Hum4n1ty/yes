@@ -12,7 +12,8 @@ public class GamePanel extends JPanel implements Runnable{
 	
 	int FPS = 30;
 	Thread gameThread;
-	public Player player1 = new Player(this);
+	KeyHandler keyH = new KeyHandler(this);
+	public Player player1 = new Player(this, keyH);
 	
 	Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 	final int screen_Width = dim.width;
@@ -40,7 +41,7 @@ public class GamePanel extends JPanel implements Runnable{
 			
 			// update information such as ant positions
 			update();
-			
+
 			// redraw sim with updated information
 			repaint();
 				

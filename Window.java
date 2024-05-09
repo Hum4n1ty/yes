@@ -26,6 +26,8 @@ public class Window {
 		
 		window.add(gp);
 		window.setVisible(true);
+		
+		gp.startGameThread();
 
 	}
 
